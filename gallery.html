@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery - SeniorCare Harmony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-img {
+            height: 200px;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--soft-blue);
+        }
+        
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h1>SeniorCare<span>Harmony</span></h1>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">A glimpse into our daily work and the compassionate care we provide to seniors.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery1.jpg" alt="Personalized Nursing Care">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Personalized Nursing Care</h3>
+                        <p>Our registered nurse providing one-on-one medical care and medication management for a client.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery2.jpg" alt="Companionship & Support">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Companionship & Support</h3>
+                        <p>Our caregiver sharing a joyful moment with a client during their daily companionship session.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery3.jpg" alt="Mobility Assistance">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Mobility Assistance</h3>
+                        <p>Helping a client with mobility exercises to improve strength and independence.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery4.jpg" alt="Nutritional Support">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Nutritional Support</h3>
+                        <p>Preparing a nutritious meal according to dietary requirements while ensuring mealtime is enjoyable.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery5.jpg" alt="Cognitive Activities">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Cognitive Activities</h3>
+                        <p>Engaging clients in memory games and cognitive exercises to maintain mental sharpness.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery6.jpg" alt="Family Involvement">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Family Involvement</h3>
+                        <p>Working together with family members to create a comprehensive care plan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card" style="margin-top: 40px;">
+                <h3><i class="fas fa-camera"></i> Moments That Matter</h3>
+                <p>At SeniorCare Harmony, we believe in capturing the meaningful moments that define our approach to elderly care.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SeniorCare Harmony</h3>
+                    <p>Providing compassionate homecare services for seniors since 2010.</p>
+                    <p><i class="fas fa-phone"></i> 03-1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@seniorcareharmony.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="home.html">Home</a></p>
+                    <p><a href="services.html">Services</a></p>
+                    <p><a href="gallery.html">Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SeniorCare Harmony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeniorCare Harmony - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .home-dropdown {
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .home-dropdown-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .home-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            z-index: 10;
+        }
+        
+        .home-dropdown-content a {
+            color: var(--dark-grey);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid var(--light-grey);
+        }
+        
+        .home-dropdown-content a:hover {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+        }
+        
+        .home-dropdown:hover .home-dropdown-content {
+            display: block;
+        }
+        
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .member-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 3px solid var(--primary-blue);
+            background-color: var(--soft-blue);
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+        
+        .member-card .position {
+            color: var(--nature-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .org-chart-simple {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        
+        .org-level {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .org-member {
+            text-align: center;
+            width: 180px;
+        }
+        
+        .org-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            overflow: hidden;
+            border: 3px solid var(--nature-green);
+            background-color: var(--soft-blue);
+        }
+        
+        .org-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .org-member h4 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .org-member .position {
+            color: var(--nature-green);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .org-connector {
+            width: 2px;
+            height: 30px;
+            background-color: var(--primary-blue);
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h1>SeniorCare<span>Harmony</span></h1>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Compassionate Care for Your Loved Ones</h2>
+                <p>Providing professional in-home care services with dignity, respect, and compassion for seniors in our community since 2010.</p>
+                <a href="services.html" class="btn">Explore Our Services</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="home-dropdown">
+                <button class="home-dropdown-btn">
+                    <i class="fas fa-bars"></i> Home Page Sections
+                </button>
+                <div class="home-dropdown-content">
+                    <a href="#company-detail">Company Detail</a>
+                    <a href="#history">Our History</a>
+                    <a href="#directory">Directory (6 People)</a>
+                    <a href="#org-chart">Organizational Chart</a>
+                </div>
+            </div>
+
+            <section id="company-detail" class="section">
+                <h2 class="section-title">About Our Company</h2>
+                <div class="home-content">
+                    <div class="content-card">
+                        <h3><i class="fas fa-heart"></i> Our Mission</h3>
+                        <p>At SeniorCare Harmony, our mission is to enhance the quality of life for seniors by providing compassionate, personalized care that enables them to live independently and comfortably in their own homes.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3><i class="fas fa-star"></i> Our Values</h3>
+                        <p><strong>Compassion:</strong> We provide care with empathy and understanding.</p>
+                        <p><strong>Excellence:</strong> We maintain the highest standards of care.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="history" class="section">
+                <h2 class="section-title">Our History</h2>
+                <div class="content-card">
+                    <h3><i class="fas fa-history"></i> A Legacy of Care Since 2010</h3>
+                    <p>SeniorCare Harmony was founded in 2010 by Dr. Sarah Johnson, a geriatric nurse with over 20 years of experience.</p>
+                </div>
+            </section>
+
+            <section id="directory" class="section">
+                <h2 class="section-title">Our Team Directory</h2>
+                
+                <div class="member-grid">
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/huda.jpeg" alt="Dr. Sarah Johnson">
+                        </div>
+                        <h4>Dr. Sarah Johnson</h4>
+                        <div class="position">Founder & Medical Director</div>
+                        <p>20+ years in geriatric care</p>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/lisa-rn.jpg" alt="Lisa Rodriguez">
+                        </div>
+                        <h4>Lisa Rodriguez, RN</h4>
+                        <div class="position">Head Nurse</div>
+                        <p>Specialized in elderly care</p>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/david-pt.jpg" alt="David Kim">
+                        </div>
+                        <h4>David Kim, PT</h4>
+                        <div class="position">Head Physiotherapist</div>
+                        <p>15 years experience</p>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/maria-g.jpg" alt="Maria Gonzalez">
+                        </div>
+                        <h4>Maria Gonzalez</h4>
+                        <div class="position">Care Coordinator</div>
+                        <p>10 years in senior care</p>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/james-w.jpg" alt="James Wilson">
+                        </div>
+                        <h4>James Wilson</h4>
+                        <div class="position">Senior Caregiver</div>
+                        <p>Certified elderly care</p>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-photo">
+                            <img src="images/susan-m.jpg" alt="Susan Miller">
+                        </div>
+                        <h4>Susan Miller</h4>
+                        <div class="position">Palliative Care</div>
+                        <p>8 years in end-of-life care</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="org-chart" class="section">
+                <h2 class="section-title">Organizational Chart</h2>
+                <div class="content-card">
+                    <h3><i class="fas fa-sitemap"></i> Our Leadership Structure</h3>
+                    
+                    <div class="org-chart-simple">
+                        <div class="org-level">
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/dr-sarah.jpg" alt="Dr. Sarah Johnson">
+                                </div>
+                                <h4>Dr. Sarah Johnson</h4>
+                                <div class="position">Founder & Medical Director</div>
+                            </div>
+                        </div>
+                        
+                        <div class="org-connector"></div>
+                        
+                        <div class="org-level">
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/lisa-rn.jpg" alt="Lisa Rodriguez">
+                                </div>
+                                <h4>Lisa Rodriguez, RN</h4>
+                                <div class="position">Head Nurse</div>
+                            </div>
+                            
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/david-pt.jpg" alt="David Kim">
+                                </div>
+                                <h4>David Kim, PT</h4>
+                                <div class="position">Head Physiotherapist</div>
+                            </div>
+                            
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/maria-g.jpg" alt="Maria Gonzalez">
+                                </div>
+                                <h4>Maria Gonzalez</h4>
+                                <div class="position">Care Coordinator</div>
+                            </div>
+                        </div>
+                        
+                        <div class="org-connector"></div>
+                        
+                        <div class="org-level">
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/james-w.jpg" alt="James Wilson">
+                                </div>
+                                <h4>James Wilson</h4>
+                                <div class="position">Senior Caregiver</div>
+                            </div>
+                            
+                            <div class="org-member">
+                                <div class="org-photo">
+                                    <img src="images/susan-m.jpg" alt="Susan Miller">
+                                </div>
+                                <h4>Susan Miller</h4>
+                                <div class="position">Palliative Care Specialist</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SeniorCare Harmony</h3>
+                    <p>Providing compassionate homecare services for seniors since 2010.</p>
+                    <p><i class="fas fa-phone"></i> 03-1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@seniorcareharmony.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="home.html">Home</a></p>
+                    <p><a href="services.html">Services</a></p>
+                    <p><a href="gallery.html">Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SeniorCare Harmony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

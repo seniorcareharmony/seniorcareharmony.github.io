@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SeniorCare Harmony</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .location-img-placeholder {
+            height: 300px;
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow: hidden;
+            background-color: var(--soft-blue);
+        }
+        
+        .location-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .social-media-only {
+            margin-top: 30px;
+        }
+        
+        .social-media-icons {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--dark-grey);
+            transition: transform 0.3s;
+            width: 120px;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-icon i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-icon.instagram i {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+        
+        .social-icon.tiktok i {
+            background: #000000;
+            color: white;
+        }
+        
+        .contact-details {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--light-grey);
+        }
+        
+        .contact-item i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+            min-width: 25px;
+        }
+        
+        .branch-locations {
+            margin-top: 50px;
+        }
+        
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .branch-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .branch-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .branch-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .branch-card p {
+            margin-bottom: 8px;
+        }
+        
+        .call-now {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--soft-blue));
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .call-now h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .phone-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h1>SeniorCare<span>Harmony</span></h1>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with us for inquiries, consultations, or to schedule a visit.</p>
+            
+            <div class="call-now">
+                <h3><i class="fas fa-phone-volume"></i> Need Immediate Assistance?</h3>
+                <p>Call us now for urgent care inquiries or emergency situations</p>
+                <div class="phone-number">
+                    <i class="fas fa-phone"></i> 03-1234 5678
+                </div>
+                <p>24/7 Emergency Line: 03-1234 9999</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="content-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                        <p><strong>SeniorCare Harmony Headquarters</strong></p>
+                        <p>No. 12, Jalan Setia Indah 3</p>
+                        <p>Taman Setia Indah</p>
+                        <p>81100 Johor Bahru, Johor</p>
+                        <p>Malaysia</p>
+                        
+                        <div class="location-image">
+                            <h4>Our Facility:</h4>
+                            <div class="location-img-placeholder">
+                                <img src="images/our-location.jpg" alt="Our Location">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-card">
+                        <h3><i class="fas fa-clock"></i> Operating Hours</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-calendar-day"></i>
+                                <div>
+                                    <strong>Monday - Friday</strong><br>
+                                    8:00 AM - 8:00 PM
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-calendar-day"></i>
+                                <div>
+                                    <strong>Saturday</strong><br>
+                                    9:00 AM - 5:00 PM
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-calendar-day"></i>
+                                <div>
+                                    <strong>Sunday</strong><br>
+                                    10:00 AM - 4:00 PM
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <strong>Emergency Services</strong><br>
+                                    24/7 Available
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-only">
+                            <h4><i class="fas fa-share-alt"></i> Connect With Us</h4>
+                            <p>Follow us on social media for updates and health tips</p>
+                            
+                            <div class="social-media-icons">
+                                <a href="https://www.instagram.com" class="social-icon instagram" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                    <small>@SeniorCareHarmony</small>
+                                </a>
+                                
+                                <a href="https://www.tiktok.com" class="social-icon tiktok" target="_blank">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span>TikTok</span>
+                                    <small>@SeniorCareHarmony</small>
+                                </a>
+                            </div>
+                            
+                            <p style="margin-top: 20px; font-size: 0.9rem; color: #666; text-align: center;">
+                                <i class="fas fa-hashtag"></i> Follow our hashtag: <strong>#SeniorCareHarmony</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3><i class="fas fa-address-card"></i> Contact Details</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>General Inquiries</strong><br>
+                            03-1234 5678
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Emergency Line</strong><br>
+                            03-1234 9999
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email Address</strong><br>
+                            info@seniorcareharmony.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-fax"></i>
+                        <div>
+                            <strong>Fax Number</strong><br>
+                            03-1234 5688
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="branch-locations">
+                <h3 class="section-title">Our Branch Locations</h3>
+                <div class="branches-grid">
+                    <div class="branch-card">
+                        <h4><i class="fas fa-map-pin"></i> Kuala Lumpur</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> No. 23, Jalan Tun Razak</p>
+                        <p>50400 Kuala Lumpur</p>
+                        <p><i class="fas fa-phone"></i> Phone: 03-2345 6789</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-8PM</p>
+                    </div>
+                    
+                    <div class="branch-card">
+                        <h4><i class="fas fa-map-pin"></i> Penang</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> No. 45, Jalan Tanjung Tokong</p>
+                        <p>10470 Tanjung Tokong, Penang</p>
+                        <p><i class="fas fa-phone"></i> Phone: 04-567 8901</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-8PM</p>
+                    </div>
+                    
+                    <div class="branch-card">
+                        <h4><i class="fas fa-map-pin"></i> Melaka</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> No. 12, Jalan Merdeka</p>
+                        <p>75000 Melaka</p>
+                        <p><i class="fas fa-phone"></i> Phone: 06-234 5678</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-8PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SeniorCare Harmony</h3>
+                    <p>Providing compassionate homecare services for seniors since 2010.</p>
+                    <p><i class="fas fa-phone"></i> 03-1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@seniorcareharmony.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="home.html">Home</a></p>
+                    <p><a href="services.html">Services</a></p>
+                    <p><a href="gallery.html">Gallery</a></p>
+                    <p><a href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SeniorCare Harmony. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
