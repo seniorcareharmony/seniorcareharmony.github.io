@@ -92,6 +92,113 @@
             cursor: pointer;
             font-size: 0.8rem;
         }
+        
+        /* New styles for enhanced service selection */
+        .service-quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 15px 0;
+            background: var(--light-grey);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--nature-green);
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .quantity-label {
+            font-weight: 600;
+            color: var(--dark-grey);
+        }
+        
+        .service-type {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .date-range-container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .date-range-container .form-group {
+            flex: 1;
+        }
+        
+        .total-days-display {
+            text-align: center;
+            margin-top: 10px;
+            padding: 8px;
+            background: var(--light-blue);
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Style for detailed bullet points */
+        .service-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+        
+        .service-content ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .service-content ul li:before {
+            content: "•";
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .service-content ul li strong {
+            display: block;
+            color: var(--nature-green);
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+        
+        .service-content ul li sub {
+            font-size: 0.9rem;
+            color: var(--dark-grey);
+        }
     </style>
 </head>
 <body>
@@ -125,69 +232,149 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/home-nursing.jpg" alt="Home Nursing">
+                        <img src="images/homenursing.jpeg" alt="Home Nursing">
                     </div>
                     <div class="service-content">
                         <h3>Home Nursing</h3>
                         <p>Professional nursing care at home including medication management, wound care, vital signs monitoring.</p>
                         <ul>
-                            <li>24/7 nursing support</li>
-                            <li>Medication administration</li>
-                            <li>Wound care and dressing</li>
+                            <li>
+                                <strong>Medical Care Management</strong>
+                                <sub>Medication administration and monitoring, Chronic disease management (diabetes, hypertension), Intravenous therapy and injections and Post-operative care coordination</sub>
+                            </li>
+                            <li>
+                                <strong>Wound and Skin Care</strong>
+                                <sub>Pressure ulcer prevention and treatment, Surgical wound dressing and care, Diabetic foot care and monitoring and Complex wound management</sub>
+                            </li>
+                            <li>
+                                <strong>Health Monitoring</strong>
+                                <sub>Regular vital signs assessment (BP, pulse, temperature), Blood glucose monitoring, Oxygen saturation monitoring and Medication reconciliation and review</sub>
+                            </li>
                         </ul>
                         <div class="price">MYR 120/day</div>
-                        <button class="btn select-service" data-service="Home Nursing" data-price="120">Select Service</button>
+                        
+                        <div class="service-quantity-control" data-service="Home Nursing" data-price="120" data-type="daily">
+                            <div class="quantity-label">Sessions/Days:</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus-btn" data-service="Home Nursing">-</button>
+                                <input type="number" class="quantity-input" id="quantity-Home-Nursing" value="1" min="1">
+                                <button class="quantity-btn plus-btn" data-service="Home Nursing">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-type">Daily Service</div>
+                        <button class="btn select-service" data-service="Home Nursing" data-price="120" data-type="daily">Select Service</button>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/physiotherapy.jpg" alt="Physiotherapy">
+                        <img src="images/fisioterapi.jpeg" alt="Physiotherapy">
                     </div>
                     <div class="service-content">
                         <h3>Physiotherapy</h3>
                         <p>Specialized physical therapy to improve mobility, strength, balance, and reduce pain.</p>
                         <ul>
-                            <li>Mobility assessment</li>
-                            <li>Strength training</li>
-                            <li>Balance exercises</li>
+                            <li>
+                                <strong>Mobility and Strength Training</strong>
+                                <sub>Safe walking and transfer techniques, Strength training for daily activities, Balance improvement exercises and Gait training with assistive devices</sub>
+                            </li>
+                            <li>
+                                <strong>Pain Management</strong>
+                                <sub>Arthritis and joint pain relief, Post-operative rehabilitation (hip/knee replacements), Manual therapy and gentle mobilization and Therapeutic exercises for pain reduction</sub>
+                            </li>
+                            <li>
+                                <strong>Condition-Specific Rehabilitation</strong>
+                                <sub>Stroke recovery programs, Parkinson's disease management, Post-fracture mobility restoration and Fall prevention strategies</sub>
+                            </li>
                         </ul>
                         <div class="price">MYR 90/session</div>
-                        <button class="btn select-service" data-service="Physiotherapy" data-price="90">Select Service</button>
+                        
+                        <div class="service-quantity-control" data-service="Physiotherapy" data-price="90" data-type="session">
+                            <div class="quantity-label">Number of Sessions:</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus-btn" data-service="Physiotherapy">-</button>
+                                <input type="number" class="quantity-input" id="quantity-Physiotherapy" value="1" min="1">
+                                <button class="quantity-btn plus-btn" data-service="Physiotherapy">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-type">Per Session</div>
+                        <button class="btn select-service" data-service="Physiotherapy" data-price="90" data-type="session">Select Service</button>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/huda.jpeg" alt="Surgery Care">
+                        <img src="images/surgerycare.jpeg" alt="Surgery Care">
                     </div>
                     <div class="service-content">
                         <h3>Surgery Care</h3>
                         <p>Comprehensive post-surgical care at home including wound care and recovery monitoring.</p>
                         <ul>
-                            <li>Post-op wound care</li>
-                            <li>Pain management</li>
-                            <li>Rehabilitation exercises</li>
+                            <li>
+                                <strong>Post-Operative Wound Management</strong>
+                                <sub>Surgical incision care and dressing changes, Drain tube monitoring and maintenance, Infection prevention and monitoring and Staple/suture removal</sub>
+                            </li>
+                            <li>
+                                <strong>Pain and Medication Management</strong>
+                                <sub>Post-surgical pain control, Medication administration as prescribed, Side effect monitoring and reporting and Patient-controlled analgesia assistance</sub>
+                            </li>
+                            <li>
+                                <strong>Recovery and Rehabilitation</strong>
+                                <sub>Early mobilization exercises, Breathing exercises to prevent pneumonia, Scar tissue management and massage and Gradual return to daily activities</sub>
+                            </li>
                         </ul>
                         <div class="price">MYR 150/day</div>
-                        <button class="btn select-service" data-service="Surgery Care" data-price="150">Select Service</button>
+                        
+                        <div class="service-quantity-control" data-service="Surgery Care" data-price="150" data-type="daily">
+                            <div class="quantity-label">Number of Days:</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus-btn" data-service="Surgery Care">-</button>
+                                <input type="number" class="quantity-input" id="quantity-Surgery-Care" value="1" min="1">
+                                <button class="quantity-btn plus-btn" data-service="Surgery Care">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-type">Daily Service</div>
+                        <button class="btn select-service" data-service="Surgery Care" data-price="150" data-type="daily">Select Service</button>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="images/huda.jpg" alt="End of Life Care">
+                        <img src="images/endoflifecare.jpeg" alt="End of Life Care">
                     </div>
                     <div class="service-content">
                         <h3>End of Life Care</h3>
                         <p>Compassionate palliative care focusing on comfort, dignity, and quality of life.</p>
                         <ul>
-                            <li>Pain management</li>
-                            <li>Emotional support</li>
-                            <li>Family counseling</li>
+                            <li>
+                                <strong>Symptom and Pain Management</strong>
+                                <sub>Advanced pain control techniques, Management of breathlessness and discomfort, Nausea and vomiting control and Fatigue and weakness management</sub>
+                            </li>
+                            <li>
+                                <strong>Emotional and Spiritual Support</strong>
+                                <sub>Companionship and active listening, Anxiety and depression support, Life review and legacy work and Spiritual care according to beliefs</sub>
+                            </li>
+                            <li>
+                                <strong>Family Support and Guidance</strong>
+                                <sub>Family counseling and education, Respite care for family caregivers, Assistance with difficult conversations and Bereavement support</sub>
+                            </li>
                         </ul>
                         <div class="price">MYR 200/day</div>
-                        <button class="btn select-service" data-service="End of Life Care" data-price="200">Select Service</button>
+                        
+                        <div class="service-quantity-control" data-service="End of Life Care" data-price="200" data-type="daily">
+                            <div class="quantity-label">Number of Days:</div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn minus-btn" data-service="End of Life Care">-</button>
+                                <input type="number" class="quantity-input" id="quantity-End-of-Life-Care" value="1" min="1">
+                                <button class="quantity-btn plus-btn" data-service="End of Life Care">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-type">Daily Service</div>
+                        <button class="btn select-service" data-service="End of Life Care" data-price="200" data-type="daily">Select Service</button>
                     </div>
                 </div>
             </div>
@@ -228,15 +415,20 @@
                         </div>
                     </div>
                     
-                    <div class="form-row">
+                    <h4>Service Period</h4>
+                    <div class="date-range-container">
                         <div class="form-group">
-                            <label for="service-days">Number of Days/Sessions *</label>
-                            <input type="number" id="service-days" class="form-control" min="1" value="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="start-date">Preferred Start Date *</label>
+                            <label for="start-date">Start Date *</label>
                             <input type="date" id="start-date" class="form-control" required>
                         </div>
+                        <div class="form-group">
+                            <label for="end-date">End Date *</label>
+                            <input type="date" id="end-date" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div id="total-days-display" class="total-days-display">
+                        Total Days: <span id="calculated-days">0</span> days
                     </div>
                     
                     <h4>Payment Information</h4>
@@ -282,11 +474,11 @@
                         <span id="receipt-phone">-</span>
                     </div>
                     <div class="receipt-row">
-                        <span><strong>Start Date:</strong></span>
-                        <span id="receipt-start-date">-</span>
+                        <span><strong>Service Period:</strong></span>
+                        <span id="receipt-period">-</span>
                     </div>
                     <div class="receipt-row">
-                        <span><strong>Duration:</strong></span>
+                        <span><strong>Total Duration:</strong></span>
                         <span id="receipt-duration">- days</span>
                     </div>
                     
@@ -318,9 +510,9 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>SeniorCare Harmony</h3>
-                    <p>Providing compassionate homecare services for seniors since 2010.</p>
-                    <p><i class="fas fa-phone"></i> 03-1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@seniorcareharmony.com</p>
+                    <p>Providing compassionate homecare services for seniors since 2012.</p>
+                    <p><i class="fas fa-phone"></i> 03-5674 5678</p>
+                    <p><i class="fas fa-envelope"></i> seniorcareharmony@gmail.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -346,11 +538,68 @@
     <script>
         let selectedServices = [];
         let totalAmount = 0;
+        let serviceQuantities = {};
         
+        // Initialize service quantities
+        document.querySelectorAll('.service-quantity-control').forEach(control => {
+            const service = control.getAttribute('data-service');
+            serviceQuantities[service] = 1;
+        });
+        
+        // Handle quantity control buttons
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const inputId = `quantity-${service.replace(/ /g, '-')}`;
+                const input = document.getElementById(inputId);
+                let value = parseInt(input.value) || 1;
+                
+                if (this.classList.contains('minus-btn') && value > 1) {
+                    value--;
+                } else if (this.classList.contains('plus-btn')) {
+                    value++;
+                }
+                
+                input.value = value;
+                serviceQuantities[service] = value;
+                
+                // Update the selected service if it's already in the cart
+                const existingIndex = selectedServices.findIndex(s => s.name === service);
+                if (existingIndex >= 0) {
+                    selectedServices[existingIndex].quantity = value;
+                    updateServicesSummary();
+                }
+            });
+        });
+        
+        // Handle quantity input changes
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const service = this.id.replace('quantity-', '').replace(/-/g, ' ');
+                const value = parseInt(this.value) || 1;
+                if (value < 1) {
+                    this.value = 1;
+                    serviceQuantities[service] = 1;
+                } else {
+                    serviceQuantities[service] = value;
+                }
+                
+                // Update the selected service if it's already in the cart
+                const existingIndex = selectedServices.findIndex(s => s.name === service);
+                if (existingIndex >= 0) {
+                    selectedServices[existingIndex].quantity = value;
+                    updateServicesSummary();
+                }
+            });
+        });
+        
+        // Handle service selection
         document.querySelectorAll('.select-service').forEach(button => {
             button.addEventListener('click', function() {
                 const service = this.getAttribute('data-service');
                 const price = parseFloat(this.getAttribute('data-price'));
+                const type = this.getAttribute('data-type');
+                const quantity = serviceQuantities[service] || 1;
                 
                 const existingIndex = selectedServices.findIndex(s => s.name === service);
                 
@@ -362,7 +611,8 @@
                     selectedServices.push({
                         name: service,
                         price: price,
-                        quantity: 1
+                        quantity: quantity,
+                        type: type
                     });
                     this.textContent = 'Selected ✓';
                     this.classList.add('selected');
@@ -370,6 +620,57 @@
                 
                 updateServicesSummary();
             });
+        });
+        
+        // Calculate total days based on start and end date
+        function calculateTotalDays() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            
+            if (!startDate || !endDate) return 0;
+            
+            const start = new Date(startDate);
+            const end = new Date(endDate);
+            
+            // Ensure end date is not before start date
+            if (end < start) {
+                document.getElementById('end-date').value = startDate;
+                return 1;
+            }
+            
+            // Calculate difference in days
+            const timeDiff = end - start;
+            const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+            
+            return daysDiff > 0 ? daysDiff : 1;
+        }
+        
+        // Update total days display
+        function updateTotalDaysDisplay() {
+            const totalDays = calculateTotalDays();
+            document.getElementById('calculated-days').textContent = totalDays;
+            
+            // Update quantities for daily services
+            selectedServices.forEach(service => {
+                if (service.type === 'daily') {
+                    service.quantity = totalDays;
+                }
+            });
+            
+            updateServicesSummary();
+        }
+        
+        // Listen for date changes
+        document.getElementById('start-date').addEventListener('change', updateTotalDaysDisplay);
+        document.getElementById('end-date').addEventListener('change', updateTotalDaysDisplay);
+        
+        // Set minimum date to today for start date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('start-date').setAttribute('min', today);
+        
+        // Update end date min when start date changes
+        document.getElementById('start-date').addEventListener('change', function() {
+            document.getElementById('end-date').setAttribute('min', this.value);
         });
         
         function updateServicesSummary() {
@@ -388,31 +689,37 @@
             selectedServices.forEach((service, index) => {
                 const serviceElement = document.createElement('div');
                 serviceElement.className = 'selected-service-item';
+                
+                const unitLabel = service.type === 'session' ? 'sessions' : 'days';
+                const totalPrice = service.price * service.quantity;
+                
                 serviceElement.innerHTML = `
                     <div>
                         <strong>${service.name}</strong><br>
-                        <small>MYR ${service.price} × ${service.quantity} ${service.name === 'Physiotherapy' ? 'sessions' : 'days'}</small>
+                        <small>MYR ${service.price} × ${service.quantity} ${unitLabel}</small>
                     </div>
                     <div>
-                        <span style="font-weight:bold;">MYR ${service.price * service.quantity}</span>
+                        <span style="font-weight:bold;">MYR ${totalPrice}</span>
                         <button class="remove-service" data-index="${index}">Remove</button>
                     </div>
                 `;
                 servicesList.appendChild(serviceElement);
                 
-                totalAmount += service.price * service.quantity;
+                totalAmount += totalPrice;
             });
             
             totalAmountElement.textContent = `Total: MYR ${totalAmount}`;
             
+            // Add event listeners to remove buttons
             document.querySelectorAll('.remove-service').forEach(button => {
                 button.addEventListener('click', function() {
                     const index = parseInt(this.getAttribute('data-index'));
+                    const removedService = selectedServices[index];
                     selectedServices.splice(index, 1);
                     
+                    // Reset the select button for removed service
                     document.querySelectorAll('.select-service').forEach(btn => {
-                        const serviceName = btn.getAttribute('data-service');
-                        if (!selectedServices.some(s => s.name === serviceName)) {
+                        if (btn.getAttribute('data-service') === removedService.name) {
                             btn.textContent = 'Select Service';
                             btn.classList.remove('selected');
                         }
@@ -423,16 +730,7 @@
             });
         }
         
-        document.getElementById('service-days').addEventListener('change', function() {
-            const days = parseInt(this.value) || 1;
-            
-            selectedServices.forEach(service => {
-                service.quantity = days;
-            });
-            
-            updateServicesSummary();
-        });
-        
+        // Handle form submission
         document.getElementById('booking-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -441,17 +739,29 @@
                 return;
             }
             
+            // Validate dates
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            
+            if (!startDate || !endDate) {
+                alert('Please select both start and end dates.');
+                return;
+            }
+            
             const clientName = document.getElementById('full-name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const startDate = document.getElementById('start-date').value;
-            const days = parseInt(document.getElementById('service-days').value) || 1;
+            const totalDays = calculateTotalDays();
+            
+            // Format dates for display
+            const startDateFormatted = new Date(startDate).toLocaleDateString('en-GB');
+            const endDateFormatted = new Date(endDate).toLocaleDateString('en-GB');
             
             document.getElementById('receipt-name').textContent = clientName;
             document.getElementById('receipt-email').textContent = email;
             document.getElementById('receipt-phone').textContent = phone;
-            document.getElementById('receipt-start-date').textContent = startDate;
-            document.getElementById('receipt-duration').textContent = `${days} ${days > 1 ? 'days' : 'day'}`;
+            document.getElementById('receipt-period').textContent = `${startDateFormatted} to ${endDateFormatted}`;
+            document.getElementById('receipt-duration').textContent = `${totalDays} ${totalDays > 1 ? 'days' : 'day'}`;
             
             const receiptServices = document.getElementById('receipt-services');
             receiptServices.innerHTML = '';
@@ -459,42 +769,68 @@
             selectedServices.forEach(service => {
                 const serviceElement = document.createElement('div');
                 serviceElement.className = 'receipt-row';
+                
+                const unitLabel = service.type === 'session' ? 'sessions' : 'days';
+                const serviceTotal = service.price * service.quantity;
+                
                 serviceElement.innerHTML = `
-                    <span>${service.name} (${days} ${service.name === 'Physiotherapy' ? 'sessions' : 'days'})</span>
-                    <span>MYR ${service.price * days}</span>
+                    <span>${service.name} (${service.quantity} ${unitLabel})</span>
+                    <span>MYR ${serviceTotal}</span>
                 `;
                 receiptServices.appendChild(serviceElement);
             });
             
             document.getElementById('receipt-total').textContent = `MYR ${totalAmount}`;
             
+            // Generate booking reference
             const ref = 'SCH-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
             document.getElementById('booking-ref').textContent = ref;
             
+            // Set receipt date to today
             const now = new Date();
             const dateStr = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
             document.getElementById('receipt-date').textContent = dateStr;
             
+            // Show receipt and hide form
             document.getElementById('payment-form').style.display = 'none';
             document.getElementById('receipt').style.display = 'block';
             
+            // Scroll to receipt
             document.getElementById('receipt').scrollIntoView({ behavior: 'smooth' });
         });
         
+        // Handle new booking button
         document.getElementById('new-booking').addEventListener('click', function() {
             document.getElementById('booking-form').reset();
             selectedServices = [];
             updateServicesSummary();
             
+            // Reset all service buttons
             document.querySelectorAll('.select-service').forEach(button => {
                 button.textContent = 'Select Service';
                 button.classList.remove('selected');
             });
             
+            // Reset quantity inputs
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.value = 1;
+            });
+            
+            // Reset service quantities
+            document.querySelectorAll('.service-quantity-control').forEach(control => {
+                const service = control.getAttribute('data-service');
+                serviceQuantities[service] = 1;
+            });
+            
+            // Reset date min values
+            document.getElementById('start-date').setAttribute('min', today);
+            document.getElementById('calculated-days').textContent = '0';
+            
             document.getElementById('payment-form').style.display = 'block';
             document.getElementById('receipt').style.display = 'none';
         });
         
+        // Handle print receipt
         document.getElementById('print-receipt').addEventListener('click', function() {
             const receiptContent = document.getElementById('receipt').innerHTML;
             const originalContent = document.body.innerHTML;
@@ -505,6 +841,7 @@
             location.reload();
         });
         
+        // Mobile menu toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
         });
