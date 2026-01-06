@@ -219,6 +219,7 @@
                     <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html" style="color: var(--nature-green);"><i class="fas fa-user-shield"></i> Admin</a></li>
                 </ul>
             </nav>
         </div>
@@ -527,6 +528,11 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
+                    <div style="margin-top: 15px;">
+                        <a href="admin.html" style="color: white; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-user-shield"></i> Admin Access
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
@@ -730,6 +736,26 @@
             });
         }
         
+        // FUNCTION: Save order to localStorage
+        function saveOrderToStorage(orderData) {
+            try {
+                // Get existing orders from localStorage
+                let orders = JSON.parse(localStorage.getItem('seniorcare_orders')) || [];
+                
+                // Add new order
+                orders.push(orderData);
+                
+                // Save back to localStorage
+                localStorage.setItem('seniorcare_orders', JSON.stringify(orders));
+                
+                return true;
+                
+            } catch (error) {
+                console.error('Error saving order:', error);
+                return false;
+            }
+        }
+        
         // Handle form submission
         document.getElementById('booking-form').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -757,11 +783,20 @@
             const startDateFormatted = new Date(startDate).toLocaleDateString('en-GB');
             const endDateFormatted = new Date(endDate).toLocaleDateString('en-GB');
             
+            // Generate booking reference
+            const ref = 'SCH-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+            
             document.getElementById('receipt-name').textContent = clientName;
             document.getElementById('receipt-email').textContent = email;
             document.getElementById('receipt-phone').textContent = phone;
             document.getElementById('receipt-period').textContent = `${startDateFormatted} to ${endDateFormatted}`;
             document.getElementById('receipt-duration').textContent = `${totalDays} ${totalDays > 1 ? 'days' : 'day'}`;
+            document.getElementById('booking-ref').textContent = ref;
+            
+            // Set receipt date to today
+            const now = new Date();
+            const dateStr = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+            document.getElementById('receipt-date').textContent = dateStr;
             
             const receiptServices = document.getElementById('receipt-services');
             receiptServices.innerHTML = '';
@@ -782,14 +817,27 @@
             
             document.getElementById('receipt-total').textContent = `MYR ${totalAmount}`;
             
-            // Generate booking reference
-            const ref = 'SCH-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
-            document.getElementById('booking-ref').textContent = ref;
+            // Save the order to localStorage - ALL ORDERS ARE CONFIRMED
+            saveOrderToStorage({
+                id: ref,
+                name: clientName,
+                email: email,
+                phone: phone,
+                service: selectedServices.map(s => s.name).join(', '),
+                date: new Date().toISOString().split('T')[0],
+                amount: totalAmount,
+                status: 'confirmed',
+                duration: totalDays + ' days',
+                services: selectedServices,
+                notes: document.getElementById('special-notes').value,
+                address: document.getElementById('address').value,
+                startDate: startDate,
+                endDate: endDate,
+                paymentMethod: document.getElementById('payment-method').value,
+                createdAt: new Date().toISOString()
+            });
             
-            // Set receipt date to today
-            const now = new Date();
-            const dateStr = now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
-            document.getElementById('receipt-date').textContent = dateStr;
+            // No alert message - just show the receipt
             
             // Show receipt and hide form
             document.getElementById('payment-form').style.display = 'none';
@@ -848,5 +896,6 @@
     </script>
 </body>
 </html>
+
 
 
